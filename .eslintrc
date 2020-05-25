@@ -1,0 +1,18 @@
+{
+  "extends": "eslint-config-egg/typescript",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "indent": [ "warn", "tab" ],
+    "valid-jsdoc": "off",
+    "jsdoc/check-tag-names": 0,
+    "semi": "off",
+    "@typescript-eslint/indent": 0,
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": 0,
+    "@typescript-eslint/no-empty-function": 0,
+    "array-bracket-spacing": [ "warn", "never" ],
+    "space-before-function-paren": 0
+  }
+}
