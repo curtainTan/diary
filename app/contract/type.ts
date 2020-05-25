@@ -5,4 +5,8 @@ module.exports = {
 		success: { type: 'boolean' }, // 结果
 		results: { type: 'string' }, // 服务器返回的数据
 	},
+	// 通过 id 删除元素的 结构体
+	deleteById: {
+		id: { type: 'number' },
+	},
 }

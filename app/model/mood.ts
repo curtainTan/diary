@@ -9,7 +9,7 @@ module.exports = app => {
 	});
 	Mood.associate = function () {
 		// associations can be defined here
-		// app.model.Mood.belongsTo(app.model.Article)
+		app.model.Mood.hasMany(app.model.Article)
 	};
 	return Mood;
 };
