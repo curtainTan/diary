@@ -10,7 +10,6 @@ import ExportArticle from '../../../app/service/article';
 import ExportBaseService from '../../../app/service/baseService';
 import ExportLabel from '../../../app/service/label';
 import ExportMood from '../../../app/service/mood';
-import ExportTest from '../../../app/service/Test';
 
 declare module 'egg' {
   interface IService {
@@ -18,6 +17,5 @@ declare module 'egg' {
     baseService: AutoInstanceType<typeof ExportBaseService>;
     label: AutoInstanceType<typeof ExportLabel>;
     mood: AutoInstanceType<typeof ExportMood>;
-    test: AutoInstanceType<typeof ExportTest>;
   }
 }

@@ -59,6 +59,21 @@ class LabelController extends BaseController {
 		this.jsonBody(res)
 	}
 
+	/**
+     * @summary 获取文章
+     * @description 根据标签获取相关文章
+     * @router get /v1/admin/getArticlByLabel
+	 * @request query integer *labelId labelId
+	 * @request query integer eg:0 page 页码
+	 * @request query integer size eg:10 每页个数
+     * @response 200 JsonResult 运行结果
+     */
+	async getArticlByLabel() {
+		const { service, ctx } = this
+		const res = await service.label.getArticleByLabel(ctx.query.labelId, ctx.query.page, ctx.query.size)
+		this.jsonBody(res)
+	}
+
 }
 
 

@@ -17,7 +17,7 @@ module.exports = app => {
 			otherKey: 'labelId',
 		})
 
-		app.model.Article.belongsTo(app.model.Mood, { foreignKey: 'moodId' })
+		app.model.Article.belongsTo(app.model.Mood)
 	};
 	return Article;
 };

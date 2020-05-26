@@ -58,6 +58,21 @@ class LabelController extends BaseController {
 		this.jsonBody(res)
 	}
 
+	/**
+     * @summary 根据 id 获取该类的文章
+     * @description 根据 id 获取该类的文章
+     * @router get /v1/admin/getArticleByMoodId
+	 * @request query integer *moodId moodId
+	 * @request query integer page 页码
+	 * @request query integer size eg:10 每页个数
+     * @response 200 JsonResult 运行结果
+     */
+	async getArticleByMoodId() {
+		const { ctx, service } = this
+		const res = await service.mood.getArticleByMoodId(ctx.query.moodId, ctx.query.page, ctx.query.size)
+		this.jsonBody(res)
+	}
+
 }
 
 

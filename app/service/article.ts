@@ -52,9 +52,24 @@ class Article extends BaseService {
 	 */
 	async findAndCountAll(page = 0, size = 10) {
 		const res = this.db.findAndCountAll({
+			// where: {},
 			offset: size * page,
 			limit: size,
 			order: [['createdAt', 'DESC']],
+			attributes: { exclude: ['moodId'] },
+			include: [
+				{
+					model: this.ctx.model.Mood,
+					attributes: { exclude: ['moodId'] },
+				},
+				{
+					model: this.ctx.model.Label,
+					through: {
+						// 指定中间表的属性，这里表示不需要任何中间表的属性
+						attributes: [],
+					},
+				},
+			],
 		})
 		return res
 	}

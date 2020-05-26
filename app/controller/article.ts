@@ -24,7 +24,7 @@ class ArticleController extends BaseController {
      * @summary 获取一篇文章
      * @description 获取一篇文章
      * @router get /v1/admin/getArticleById
-     * @request query number artid 文章id
+     * @request query integer artid 文章id
      * @response 200 JsonResult 运行结果
      */
 	async getArticleById() {
@@ -36,11 +36,11 @@ class ArticleController extends BaseController {
 	/**
      * @summary 获取分页文章
      * @description 获取分页文章
-     * @router get /v1/admin/findAndCountAll
-     * @request query number page,number size 文章id
+     * @router get /v1/admin/findArticleByPage
+     * @request query integer page,integer size 文章id
      * @response 200 JsonResult 运行结果
      */
-	async findAndCountAll() {
+	async findArticleByPage() {
 		const { ctx, service } = this
 		const res = await service.article.findAndCountAll(ctx.query.page, ctx.query.size)
 		this.jsonBody(res)

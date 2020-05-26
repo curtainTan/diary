@@ -3,7 +3,6 @@ module.exports = app => {
 	const DataTypes = app.Sequelize
 	const Mood = app.model.define('Mood', {
 		mood: DataTypes.STRING,
-		moodId: DataTypes.INTEGER,
 	}, {
 		timestamps: false,
 	});
