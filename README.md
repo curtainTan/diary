@@ -1,6 +1,19 @@
-# new-start
+# diary -- 心情日记
 
-## 配置 swagger
+项目规划：
+
+1. 搭建基本项目
+2. 配置 swagger 和 egg-sequelize
+3. 设计数据库 er 模型
+4. 使用 sequelize-cli 创建 migration 迁移模型
+5. 修改 model 和 migrate 文件中的表结构，删除不必要字段，添加表配置属性
+6. 创建表
+7. 编写 service 文件 和 controller 文件
+8. 编写 swagger 注解 - contract 结构体
+
+
+
+## 二、配置 swagger
 
 1. 安装插件
 
@@ -80,6 +93,8 @@ class HomeController extends Controller{
 module.exports = HomeController;
 ```
 
+
+## 三、设计 er 模型
 
 
 ```js

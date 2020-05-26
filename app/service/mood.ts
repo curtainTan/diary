@@ -32,6 +32,8 @@ class Mood extends BaseService {
 			limit: size,
 			order: [['createdAt', 'DESC']],
 		})
+		console.log('获取总数：-----')
+		console.log(res.count())
 		return res
 	}
 
