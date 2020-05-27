@@ -15,14 +15,41 @@ class Article extends BaseService {
 			content: body.content,
 		}
 
+		// 添加心情
+		const mood = await this.ctx.model.Mood.findByPk(body.moodId)
+		if (!mood) {
+			return '心情参数错误'
+		}
 		const item = await this.db.create(data)
+		await item.setMood(mood)
+		// 添加 label
+		const labels = await this.ctx.model.Label.findAll({ where: { id: body.labelIds } })
+		await item.setLabels(labels)
+
+		return item
+	}
+
+	/**
+	 * 修改文章
+	 * @param body 一篇文章
+	 */
+	async updateArticle(body: any) {
+		const data = {
+			title: body.title,
+			content: body.content,
+		}
+
+		const item = await this.db.findByPk(body.id)
+		if (!item) {
+			return '未找到到文章'
+		}
+		await item.update(data)
 		// 添加心情
 		const mood = await this.ctx.model.Mood.findByPk(body.moodId)
 		await item.setMood(mood)
 		// 添加 label
 		const labels = await this.ctx.model.Label.findAll({ where: { id: body.labelIds } })
 		await item.setLabels(labels)
-
 		return item
 	}
 

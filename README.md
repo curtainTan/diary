@@ -33,6 +33,26 @@
 8. 编写 swagger 注解 - contract 结构体
 9. 接口测试
 
+**项目文件结构**
+
+	|--app	项目文件
+		|--contract  	swagger参数模型结构体
+		|--controller	控制器-路由处理点
+		|--model		sequelize 数据模型
+		|--public		静态资源路径
+		|--service		service 目录
+		|--router.ts	路由文件
+	|--config	配置文件夹
+	|--database	数据库配置文件
+		|--migrations	迁移文件目录
+		|--config.json	数据库配置文件
+	|--logs	日志文件夹
+	|--run	项目编译后的一些配置
+	|--typings	程序整体类型声明文件
+	|--.eslintrc	eslint 配置文件
+	|--.sequelize	sequelize-cli 配置文件
+
+
 ## 一、项目基本搭建
 
 初始化 egg-ts 项目

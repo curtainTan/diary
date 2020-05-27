@@ -21,6 +21,19 @@ class ArticleController extends BaseController {
 	}
 
 	/**
+     * @summary 修改文章
+     * @description 修改文章
+     * @router post /v1/admin/modifyArticle
+     * @request body createArticleDto 数据模型 label参数
+     * @response 200 JsonResult 运行结果
+     */
+	async modifyArticle() {
+		const { ctx, service } = this
+		const res = await service.article.updateArticle(ctx.request.body)
+		this.jsonBody(res)
+	}
+
+	/**
      * @summary 获取一篇文章
      * @description 获取一篇文章
      * @router get /v1/admin/getArticleById
