@@ -27,7 +27,16 @@ class Label extends BaseService {
 				},
 			],
 		})
-		return res
+
+		// 获取总数
+		const counts = await label.countArticles()
+
+		return {
+			counts,
+			page,
+			size,
+			articleList: res,
+		}
 	}
 
 }

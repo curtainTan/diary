@@ -36,7 +36,7 @@
 **项目文件结构**
 
 	|--app	项目文件
-		|--contract  	swagger参数模型结构体
+	    |--contract  	swagger参数模型结构体
 		|--controller	控制器-路由处理点
 		|--model		sequelize 数据模型
 		|--public		静态资源路径

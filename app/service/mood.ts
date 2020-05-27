@@ -32,9 +32,15 @@ class Mood extends BaseService {
 			limit: size,
 			order: [['createdAt', 'DESC']],
 		})
-		console.log('获取总数：-----')
-		console.log(res.count())
-		return res
+
+		// 获取总数
+		const counts = await item.countArticles()
+		return {
+			counts,
+			page,
+			size,
+			articleList: res,
+		}
 	}
 
 }
