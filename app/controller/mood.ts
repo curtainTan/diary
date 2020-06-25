@@ -73,7 +73,14 @@ class LabelController extends BaseController {
 		this.jsonBody(res)
 	}
 
-}
+	async userlogin() {
+		const { ctx } = this
+		console.log('获取到的请求头：', ctx.request)
+		ctx.body = {
+			msg: '成功--',
+		}
+	}
 
+}
 
 export default LabelController
